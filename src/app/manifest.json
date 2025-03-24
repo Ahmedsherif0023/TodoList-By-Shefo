@@ -1,0 +1,21 @@
+{
+  "name": "TodoList | By SHEFO",
+  "short_name": "TodoList",
+  "description": "A simple to-do list app",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#15101C",
+  "theme_color": "#3E1671",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.ico",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
