@@ -20,7 +20,8 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: transparent;
+  margin-top: -50px;
+
 }
 
 .centered{
@@ -39,11 +40,15 @@
   flex-direction: column;
   color: white;
   font-weight: bold;
-  margin: 10px;
-  background-color: #15101C;
+  margin: 0px;
+  background-color: transparent;
   padding: 10px;
   border-radius: 10px;
   margin-bottom: 20px;
+}
+
+.header-container{
+  background-color: transparent;
 }
 
 
@@ -128,7 +133,9 @@
   color:#ffffff;
   font-weight: bold;
   width: 423px;
-  height:63px
+  height:63px;
+  white-space: normal; /* Allows text to wrap */
+  word-wrap: break-word; /* Breaks long words */
 }
 
 
@@ -179,7 +186,8 @@ svg:hover{
 
 .ListItem.completed {
   text-decoration: line-through;
-  color: gray;
+  color: #6B7280; /* A gray shade for completed tasks */
+  background-color: #1F2937; /* A darker background for completed tasks */
 }
 
 .ListItem span{
@@ -199,6 +207,9 @@ svg:hover{
   margin: 30px 0px;
 }
 
+h3, ul, li , header-container,  header{
+  background-color: transparent;
+}
 
 .container {
   @apply flex items-center justify-center h-screen bg-transparent;
@@ -223,11 +234,19 @@ svg:hover{
 .listWrap form button {
   @apply w-10 h-10 bg-purple-500 text-white rounded-lg ml-2;
 }
-
-.ListItem {
-  @apply flex items-center justify-between bg-gray-900 p-4 rounded-lg mt-2 text-white font-bold w-full md:w-3/4 lg:w-2/3;
+.listWrap {
+  @apply p-4 rounded-lg;
+  background-color: #240072; /* A very dark violet shade */
 }
-
+.TasksToDo {
+  @apply w-full;
+}
+.ListItem {
+  @apply flex items-center justify-between bg-gray-900 p-4 rounded-lg mt-2 text-white font-bold w-full;
+  overflow: hidden; /* Ensures content doesn't overflow the container */
+  text-overflow: ellipsis; /* Adds "..." for overflowing text */
+  white-space: nowrap; /* Prevents text from wrapping to the next line */
+}
 /* Custom media queries */
 @media (max-width: 768px) {
   .TasksLabel {
@@ -239,4 +258,52 @@ svg:hover{
   .TasksLabel {
     font-size: 18px;
   }
+}
+
+
+.task-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: calc(100% - 50px); /* Adjust based on the space needed for icons */
+  display: inline-block;
+}
+
+.timer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  background-color: transparent;
+}
+.timer input {
+  width: 50px; /* Adjust width for minutes and seconds inputs */
+  padding: 5px;
+  border: 1px solid #3e1671;
+  border-radius: 5px;
+  color: #777777;
+  background-color: #15101c;
+  text-align: center; /* Center the text */
+}
+
+.timer input::placeholder {
+  color: #555555; /* Placeholder text color */
+}
+
+.timer button {
+  padding: 5px 10px;
+  background-color: #9e78cf;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.timer button:hover {
+  background-color: #7e5fb0;
+}
+
+.timer span {
+  font-size: 14px;
+  color: #ffffff;
 }
