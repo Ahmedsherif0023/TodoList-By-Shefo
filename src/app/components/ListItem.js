@@ -88,40 +88,42 @@ const ListItem = ({ task, delHandler, doneHandler, editHandler, saveHandler }) =
           </span>
         )}
 
-        {/* Timer Input */}
-        <div className="timer">
-          {isTimerRunning ? (
-            <>
-              <span>{`${Math.floor(timeLeft / 60)}m ${timeLeft % 60}s`}</span>
-              <button onClick={stopTimer}>Stop</button>
-            </>
-          ) : (
-            <>
-              <input
-                type="text"
-                placeholder="Min"
-                value={minutes}
-                onChange={handleMinutesChange}
-              />
-              <input
-                type="text"
-                placeholder="Sec"
-                value={seconds}
-                onChange={handleSecondsChange}
-              />
-              <button onClick={startTimer}>Start</button>
-            </>
-          )}
-        </div>
-
-        <div className="icons">
-          <button onClick={doneHandler}>
-            <MdDoneOutline className="DoneIcon" />
-          </button>
-          <button onClick={delHandler}>
-            <FaRegTrashAlt className="TrashIcon" />
-          </button>
-        </div>
+      <div className="actions">
+          {/* Timer Input */}
+          <div className="timer">
+            {isTimerRunning ? (
+              <>
+                <span>{`${Math.floor(timeLeft / 60)}m ${timeLeft % 60}s`}</span>
+                <button onClick={stopTimer}>Stop</button>
+              </>
+            ) : (
+              <>
+                <input
+                  type="text"
+                  placeholder="Min"
+                  value={minutes}
+                  onChange={handleMinutesChange}
+                />
+                <input
+                  type="text"
+                  placeholder="Sec"
+                  value={seconds}
+                  onChange={handleSecondsChange}
+                />
+                <button onClick={startTimer}>Start</button>
+              </>
+            )}
+          </div>
+        
+          <div className="icons">
+            <button onClick={doneHandler}>
+              <MdDoneOutline className="DoneIcon" />
+            </button>
+            <button onClick={delHandler}>
+              <FaRegTrashAlt className="TrashIcon" />
+            </button>
+          </div>
+      </div>
       </div>
     </li>
   );

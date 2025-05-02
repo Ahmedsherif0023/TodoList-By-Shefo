@@ -109,9 +109,9 @@
 
 .icons{
   background-color: transparent;
+  margin-top: 10px; /* Add spacing between the timer and the buttons */
   display: flex;
-  flex-direction: row;
-  padding: 10px;
+  gap: 10px;
 }
 
 .DoneIcon{
@@ -121,22 +121,32 @@
   margin-left: 15px;
   color:#ff0000
 }
-
-.ListItem{
+.ListItem {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column; /* Stack content vertically */
+  align-items: flex-start; /* Align content to the left */
+  justify-content: center; /* Center content vertically */
   background-color: #15101C;
   padding: 10px;
   border-radius: 10px;
   margin-top: 10px;
-  color:#ffffff;
+  color: #ffffff;
   font-weight: bold;
-  width: 423px;
-  height:63px;
-  white-space: normal; /* Allows text to wrap */
-  word-wrap: break-word; /* Breaks long words */
+  width: 100%; /* Make the list item take full width */
+  height: auto; /* Allow height to adjust based on content */
+  white-space: normal; /* Allow text to wrap */
+  word-wrap: break-word; /* Break long words */
 }
+.actions{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  background-color: transparent;
+}
+
+
+
 
 
 .ListItem:hover{
@@ -270,10 +280,10 @@ h3, ul, li , header-container,  header{
 }
 
 .timer {
+  margin-top: 10px; /* Add spacing between the text and the timer */
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-top: 10px;
   background-color: transparent;
 }
 .timer input {
@@ -306,4 +316,58 @@ h3, ul, li , header-container,  header{
 .timer span {
   font-size: 14px;
   color: #ffffff;
+}
+
+/* Adjust styles for mobile screens */
+@media (max-width: 768px) {
+  .container {
+    height: auto; /* Allow the container to adjust its height */
+    margin-top: 0;
+  }
+
+  .centered {
+    height: auto; /* Allow the centered section to adjust its height */
+    width: 90%; /* Make it take most of the screen width */
+    padding: 10px;
+  }
+
+  .header {
+    font-size: 16px; /* Reduce font size */
+    padding: 8px;
+  }
+
+  .AddTaskInput {
+    width: 100%; /* Make the input field take full width */
+    height: 35px; /* Reduce height */
+    font-size: 14px; /* Reduce font size */
+  }
+
+  .listWrap {
+    padding: 10px; /* Reduce padding */
+  }
+
+  .ListItem {
+    padding: 8px; /* Reduce padding */
+    font-size: 14px; /* Reduce font size */
+    width: 100%; /* Make the list item take full width */
+    height: auto; /* Allow height to adjust based on content */
+  }
+
+  .timer input {
+    width: 40px; /* Reduce width of timer inputs */
+    font-size: 12px; /* Reduce font size */
+  }
+
+  .timer button {
+    padding: 4px 8px; /* Reduce button padding */
+    font-size: 12px; /* Reduce font size */
+  }
+
+  .icons button {
+    font-size: 18px; /* Reduce icon size */
+  }
+
+  .TasksLabel {
+    font-size: 16px; /* Reduce label font size */
+  }
 }
