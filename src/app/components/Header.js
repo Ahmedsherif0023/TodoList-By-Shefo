@@ -5,7 +5,7 @@ const Header = () => {
     <div className="header-container">
       {" "}
       <div className="header">
-        <h3>Todo App - By SHEFO </h3>
+        <h3>Focus Flow - By SHEFO </h3>
       </div>
     </div>
   );
